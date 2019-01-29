@@ -1,0 +1,28 @@
+body {
+    background-color:#007bff!important;
+}
+
+.custom-form{
+    color: white;
+}
+
+.submit-btn{
+
+    margin-top: 3rem;
+    width:100%;
+    padding:10px;
+}
+
+.date-field{
+    width: 200px;
+}
+
+.anon-label{
+    font-size:20px;
+}
+
+input[type='checkbox']{
+    width:20px;
+    height:20px;
+    margin-right:.5rem
+}
