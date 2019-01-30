@@ -1,0 +1,13 @@
+<nav-bar></nav-bar>
+<div class="container-fluid main-feed">
+  
+  <bubl-row *ngFor="let row of bublData" 
+        [yesVote] = "row.yes"
+        [noVote] = "row.no" 
+        [total]="row.total" 
+        [daysRemaining]="row.daysRemaining"
+        [summary]="row.summary"
+        [description]="row.description">
+  </bubl-row>
+</div>
+
