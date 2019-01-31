@@ -20,4 +20,7 @@ export class BublRowComponent implements OnInit {
   ngOnInit() {
   }
 
+  rowClick() {
+    console.log(this.daysRemaining);
+  }
 }

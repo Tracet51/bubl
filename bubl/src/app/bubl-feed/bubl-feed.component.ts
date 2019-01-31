@@ -32,9 +32,7 @@ export class BublFeedComponent implements OnInit {
     ]
   }
 
-  rowClick(row: Object) {
-    console.log(row);
-  }
+
 
   ngOnInit() {
   }

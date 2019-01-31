@@ -1,5 +1,5 @@
 <div class="container-fluid main-feed">
-  <bubl-row (click)="rowClick(row)" *ngFor="let row of bublData" 
+  <bubl-row *ngFor="let row of bublData" 
         [yesVote] = "row.yes"
         [noVote] = "row.no" 
         [total]="row.total" 
