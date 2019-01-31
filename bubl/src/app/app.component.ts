@@ -31,4 +31,8 @@ export class AppComponent {
       }
     ]
   }
+
+  rowClick(row: Object) {
+    console.log(row);
+  }
 }
