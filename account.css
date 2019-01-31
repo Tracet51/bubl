@@ -1,0 +1,24 @@
+.pin-bottom {
+    position: fixed;
+    bottom: 0px;
+    width: 100%
+}
+.img-sm {
+    height: 50px;
+    width: 50px;
+}
+
+.comment-name{
+    display: block;
+    font-weight: bold
+}
+
+.comment-date{
+    font-weight: normal;
+    color:gray;
+    /* margin-left: .5rem; */
+}
+
+.back-text{
+    color:white;
+}
