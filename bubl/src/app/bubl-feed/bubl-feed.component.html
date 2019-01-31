@@ -1,5 +1,4 @@
 <div class="container-fluid main-feed">
-  THISIS SPARTA
   <bubl-row (click)="rowClick(row)" *ngFor="let row of bublData" 
         [yesVote] = "row.yes"
         [noVote] = "row.no" 
@@ -8,7 +7,6 @@
         [summary]="row.summary"
         [description]="row.description">
   </bubl-row>
-  THISIS SPARTA
 
 </div>
 
