@@ -24,7 +24,7 @@ export class BublRowComponent implements OnInit {
 
   rowClick() {
     // console.log(this.summary);
-    this.router.navigate(['/bubl-detail', {simple: "something simple"}]);
+    // this.router.navigate(['/bubl-detail-page', {id: "something simple"}]);
 
   }
 }
