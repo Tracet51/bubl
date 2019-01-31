@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'bubl-row',
@@ -13,7 +15,7 @@ export class BublRowComponent implements OnInit {
   @Input() summary = "";
   @Input() description = "";
 
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
@@ -21,6 +23,8 @@ export class BublRowComponent implements OnInit {
   }
 
   rowClick() {
-    console.log(this.daysRemaining);
+    // console.log(this.summary);
+    this.router.navigate(['/bubl-detail', {simple: "something simple"}]);
+
   }
 }

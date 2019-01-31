@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bubl-detail',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bubl-detail.component.css']
 })
 export class BublDetailComponent implements OnInit {
+  @Input() yesVote = 0;  // makes it bindable
+  @Input() noVote = 0;
+  @Input() total = 0;
+  @Input() daysRemaining = 0;
+  @Input() summary = "";
+  @Input() description = "";
+  @Input() simple = "";
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
+    console.log(this.simple);
   }
 
 }

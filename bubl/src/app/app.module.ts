@@ -7,11 +7,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BublRowComponent } from './bubl-row/bubl-row.component';
 import { BublFeedComponent } from './bubl-feed/bubl-feed.component';
 import { BublDetailComponent } from './bubl-detail/bubl-detail.component';
+import { BublFeedPageComponent } from './bubl-feed-page/bubl-feed-page.component';
 
 const appRoutes: Routes = [
    {
-    path: 'feed',
-    component: BublFeedComponent,
+    path: 'bubl-feed-page',
+    component: BublFeedPageComponent,
     data: { title: 'Bubl Feed' }
   },
   { path: 'bubl-detail',
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
     data: { title: 'Bubl Detail' }
   },
   { path: '',
-    redirectTo: '/feed',
+    redirectTo: '/bubl-feed-page',
     pathMatch: 'full'
   },
   // { path: '**', component: PageNotFoundComponent }
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     NavBarComponent,
     BublRowComponent,
     BublFeedComponent,
-    BublDetailComponent
+    BublDetailComponent,
+    BublFeedPageComponent
   ],
   imports: [
     BrowserModule,
