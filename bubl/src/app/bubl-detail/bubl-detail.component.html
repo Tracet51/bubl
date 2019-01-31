@@ -1,20 +1,20 @@
 <div class="container-fluid">
     <div>
       <div class="row mt-2 mb-2">
-          <h3 class="col text-center">Less Weekly Mtgs</h3>
+          <h3 class="col text-center">{{bubl.summary}}</h3>
       </div>
-      <div class="row justify-content-center">
-          <div class="col-5 btn btn-primary mr-1">
+      <div  class="row justify-content-center">
+          <div (click)="upVote()" class="col-5 btn btn-primary mr-1">
               <img class="img-sm" src="assets/check.png"/>
           </div>
-          <div class="col-5 btn btn-danger ml-1">
+          <div (click)="downVote()" class="col-5 btn btn-danger ml-1">
               <img class="img-sm" src="assets/whitex.png"/>
           </div>
       </div>
       <hr/>
       <div class="row">
         <div class="col text-center">
-          Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.
+          {{bubl.description}}
         </div>
       </div>
       <hr/>
@@ -26,36 +26,14 @@
       <hr />
       <div class="collapse" id="collapseExample">
         <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Enter a comment or question" aria-label="Enter a comment or question" aria-describedby="basic-addon2">
+        <input [(ngModel)]="commentString" type="text" class="form-control" placeholder="Enter a comment or question" aria-label="Enter a comment or question" aria-describedby="basic-addon2">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">Post</button>
+            <button (click)="createNewComment()" class="btn btn-outline-secondary" type="button">Post</button>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-2">
-          <img  class="mt-1" src="assets/profile.png" height="50px"/>
-        </div>
-        <div class="col-10">
-          <span class="comment-name">
-            Whitney User 
-            <span class="comment-date"> on Nov. 1</span>
-          </span>
-          This is a comment that is decently long. This is a comment that is decently long. This is a comment that is decently long. This is a comment that is decently long.
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-          <div class="col-2">
-            <img  class="mt-1" src="assets/profile.png" height="50px"/>
-          </div>
-          <div class="col-10">
-            <span class="comment-name">
-              Whitney User 
-              <span class="comment-date"> on Nov. 1</span>
-            </span>
-            This is a comment that is decently long. This is a comment that is decently long. This is a comment that is decently long. This is a comment that is decently long.
-          </div>
-        </div>
+      <comment *ngFor="let comment of bubl.comments"
+        [comment] = "comment">
+      </comment>
     </div>
   </div>

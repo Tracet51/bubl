@@ -14,12 +14,17 @@ export class BublRowComponent implements OnInit {
   @Input() daysRemaining = 0;
   @Input() summary = "";
   @Input() description = "";
+  @Input() id = 0;
+  yesPercent = 0;
+  noPercent = 0;
 
   constructor(private router: Router) {
 
   }
 
   ngOnInit() {
+    this.noPercent = (this.noVote/(this.noVote+this.yesVote))*100;
+    this.yesPercent = (this.yesVote/(this.noVote + this.yesVote))*100;
   }
 
   rowClick() {

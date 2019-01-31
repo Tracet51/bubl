@@ -10,18 +10,30 @@ import { BublDetailComponent } from './bubl-detail/bubl-detail.component';
 import { BublFeedPageComponent } from './bubl-feed-page/bubl-feed-page.component';
 import { BublDetailPageComponent } from './bubl-detail-page/bubl-detail-page.component';
 import { BackBarComponent } from './back-bar/back-bar.component';
+import { CommentComponent } from './comment/comment.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { FormsModule } from "@angular/forms";
+import { CreateBublPageComponent } from './create-bubl-page/create-bubl-page.component';
+import { CreateBublFormComponent } from './create-bubl-form/create-bubl-form.component';
 
 const appRoutes: Routes = [
-   {
+  {
     path: 'bubl-feed-page',
     component: BublFeedPageComponent,
     data: { title: 'Bubl Feed' }
   },
-  { path: 'bubl-detail-page',
+  {
+    path: 'create-bubl-page',
+    component: CreateBublPageComponent,
+    data: { title: 'Create Bubl' }
+  },
+  {
+    path: 'bubl-detail-page/:id',
     component: BublDetailPageComponent,
     data: { title: 'Bubl Detail' }
   },
-  { path: '',
+  {
+    path: '',
     redirectTo: '/bubl-feed-page',
     pathMatch: 'full'
   },
@@ -38,14 +50,19 @@ const appRoutes: Routes = [
     BublDetailComponent,
     BublFeedPageComponent,
     BublDetailPageComponent,
-    BackBarComponent
+    BackBarComponent,
+    CommentComponent,
+    SideMenuComponent,
+    CreateBublPageComponent,
+    CreateBublFormComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

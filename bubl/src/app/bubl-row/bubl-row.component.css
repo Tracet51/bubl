@@ -1,0 +1,7 @@
+.show-sm {
+}
+@media (min-width : 300px) {
+  .show-sm {
+    padding-right: 5px
+  }
+}

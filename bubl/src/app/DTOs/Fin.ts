@@ -5,5 +5,5 @@ export interface Fin {
     firstName: string,
     lastName: string,
     officeName: string,
-    comments: Array<BublComment>
+    picture: string
 }
