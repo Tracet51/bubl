@@ -24,22 +24,28 @@ export class CreateBublFormComponent implements OnInit {
 
     const oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
     const todayDate = new Date();
-    let daysRemaining = Math.round(Math.abs((Date.parse(this.dueDate) - todayDate.getTime())/(oneDay)));
+    let daysRemaining = Math.round(Date.parse(this.dueDate) - todayDate.getTime()/(oneDay));
     daysRemaining += 1; 
 
-    let newBubl: Bubl = {
-      id: Math.floor(Math.random()*100),
-      summary: this.summary,
-      description: this.description,
-      daysRemaining: daysRemaining,
-      no: 0,
-      yes: 0,
-      total: 100,
-      comments: []
-    };
+    if (daysRemaining > 91 || daysRemaining < 1) {
+      alert("Date needs to be between 1 and 90 days from now")
+    }
+    else {
 
-    BublData.push(newBubl);
-    this.router.navigateByUrl('/bubl-feed-page');
-  }
+      let newBubl: Bubl = {
+        id: Math.floor(Math.random()*100),
+        summary: this.summary,
+        description: this.description,
+        daysRemaining: daysRemaining,
+        no: 0,
+        yes: 0,
+        total: 100,
+        comments: []
+      };
+  
+      BublData.push(newBubl);
+      this.router.navigateByUrl('/bubl-feed-page');
+    }
+    }
 
 }
