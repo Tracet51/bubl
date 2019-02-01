@@ -24,7 +24,7 @@ export class BublDetailComponent implements OnInit {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getBublDetails(this.id);
   }
-
+  
   getBublDetails(id: number) {
     var result = BublData.find((bubl) => {
       return bubl.id === this.id;
