@@ -12,6 +12,7 @@ export class CreateBublFormComponent implements OnInit {
   summary = "";
   description = "";
   dueDate = "";
+  totalSummaryLength = 0;
 
   constructor(private router: Router) {
   }
@@ -46,6 +47,20 @@ export class CreateBublFormComponent implements OnInit {
       BublData.push(newBubl);
       this.router.navigateByUrl('/bubl-feed-page');
     }
+  }
+
+  onKey(event: KeyboardEvent) {
+    const key = event.key;
+    if (key == "Backspace") {
+      if (this.totalSummaryLength != 0) {
+        this.totalSummaryLength -= 1
+      }
     }
+    else {
+      this.totalSummaryLength += 1;
+    }
+
+    console.log(this.totalSummaryLength);
+  }
 
 }

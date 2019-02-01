@@ -3,8 +3,8 @@
   <form>
     <div class="form-group">
       <label for="title-input"> Title</label>
-      <input [(ngModel)]="summary" name="title-input" type="text" class="form-control" id="title-input" rows="3" />
-      <small class="form-text text-right">0/50 characters</small>
+      <input (keyup)="onKey($event)" [(ngModel)]="summary" name="title-input" type="text" class="form-control" id="title-input" rows="3" />
+      <small class="form-text text-right">{{totalSummaryLength}}/50 characters</small>
     </div>
     <div class="form-group">
       <label for="description-input"> Description</label>
